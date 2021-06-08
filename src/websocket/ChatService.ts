@@ -10,6 +10,6 @@ io.on("connect", (socket) => {
 
     const user = await createUser.execute({email, avatar, name, socket_id: socket.id});
 
-    console.log(user);
+    socket.broadcast.emit("new_user", user);
   });
 });
