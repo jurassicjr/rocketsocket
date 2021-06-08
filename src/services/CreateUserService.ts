@@ -17,7 +17,7 @@ export default class CreateUserService {
       const user = await User.findOneAndUpdate(
         { _id: userAlreadyExists._id },
         { $set: { socket_id, avatar, name }},
-        { new: true }).exec();
+        { new: true, useFindAndModify: false }).exec();
     
       return user;
     } 
