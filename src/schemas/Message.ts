@@ -5,7 +5,7 @@ type Message = Document &  {
   to: String;
   text: String;
   created_at: Date;
-  room_id: String;
+  roomId: String;
 };
 
 const MessageSchema = new Schema({
